@@ -7,6 +7,7 @@ def hello():
     return 'Hello, world!'
 print('code change')
 print ('test')
+print('wow')
 if __name__ == '__main__':
     app.run()
 
