@@ -1,18 +1,16 @@
 version: 0.0
 os: linux
-
 files:
   - source: /day-14/simple-python-app
     destination: /home/ubuntu/simple-python-app
   - source: /scripts
     destination: /home/ubuntu/scripts
-
 hooks:
   ApplicationStop:
-    - location: scripts/stop_container.sh  # Correct relative path
+    - location: scripts/stop_container.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/start_container.sh  # Correct relative path
+    - location: scripts/start_container.sh
       timeout: 300
       runas: root
