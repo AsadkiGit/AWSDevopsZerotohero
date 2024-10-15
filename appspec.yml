@@ -1,15 +1,18 @@
 version: 0.0
 os: linux
+
+files:
+  - source: /day-14/simple-python-app
+    destination: /home/ubuntu/simple-python-app
+  - source: /scripts
+    destination: /home/ubuntu/scripts
+
 hooks:
-  BeforeInstall:
-    - location: scripts/set_permissions.sh
-      timeout: 300
-      runas: root
   ApplicationStop:
-    - location: scripts/stop_container.sh
+    - location: /home/ubuntu/scripts/stop_container.sh  # Updated path to reflect the destination
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/start_container.sh
+    - location: /home/ubuntu/scripts/start_container.sh  # Updated path to reflect the destination
       timeout: 300
       runas: root
