@@ -9,10 +9,10 @@ files:
 
 hooks:
   ApplicationStop:
-    - location: /home/ubuntu/scripts/stop_container.sh  # Updated path to reflect the destination
+    - location: scripts/stop_container.sh  # Correct relative path
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /home/ubuntu/scripts/start_container.sh  # Updated path to reflect the destination
+    - location: scripts/start_container.sh  # Correct relative path
       timeout: 300
       runas: root
